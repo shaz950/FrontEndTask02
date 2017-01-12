@@ -7,7 +7,6 @@ function ScoreCounter(el,range,start){
         }
 
         function setLimit(input,len){
-
            return input.toString().length <= len;
         }
 
@@ -36,9 +35,7 @@ function ScoreCounter(el,range,start){
                 alert("Sorry, cannot go lower than zero");
                 score =0;
             }
-
         }
-
         function reset(){
             score = 0;
         }
@@ -46,6 +43,7 @@ function ScoreCounter(el,range,start){
         function removeCounter(){
             return el.parentNode.removeChild(el);
         }
+
 
         return{
             value: value,
@@ -59,27 +57,6 @@ function ScoreCounter(el,range,start){
         };
 }
 
-function createCounter(){
-
-    let div = document.createElement('div');
-    let childLen = document.body.children.length;
-    div.id = "score-" + (childLen-3);
-    div.innerHTML =
-        '<h1>' + 'Score ' + (childLen-3) + ':' + ' <span class="counter"></span></h1>'+
-        '<form onsubmit="return false;"> ' +
-        '<button  class="up">Up</button> ' +
-        '<button class="down">Down</button> ' +
-        '<button class="get">Get</button> ' +
-        '<input class="value" type="number" min="0"> ' +
-        '<button class="set">Set</button> ' +
-        '<button class="reset">Reset</button> ' +
-        '<button class="remove">Remove Counter</button>'+
-        '</form>';
-
-
-    document.body.appendChild(div);
-    return div;
-}
 
 
 

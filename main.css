@@ -1,20 +1,16 @@
 /*Main css*/
-@keyframes scaleup {
-    0%{
-        font-size: 50px;
-    }
-    100%{
-        font-size: 70px;
-    }
-}
+
 body{
     background-color:#616161;
     padding: 0;
     margin:0;
 }
 h1{
-    font: 50px arial,sans-serif;
+    font: 50px arial,serif;
     color: #FAFAFA;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    text-shadow: 1px 1px 1px;
 }
 div[id^=score-]{
     flex-direction:column;

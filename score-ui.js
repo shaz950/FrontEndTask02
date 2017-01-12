@@ -13,6 +13,7 @@ function ScoreUI(el,range,start) {
     el.addEventListener("click", function(e){
         if(e.target.matches('button.up')){
             scoreCounter.Up();
+            trigger();
         }else if(e.target.matches('button.down')){
             scoreCounter.Down();
         }else if(e.target.matches('button.get')) {
@@ -27,10 +28,30 @@ function ScoreUI(el,range,start) {
         Display();
     });
 
-
     //Function used to display numbers in proper form
     function Display(){
         el.querySelector(".counter").innerHTML = scoreCounter.addZeros(scoreCounter.getScore(), range);
     }
+}
 
+function createCounter(){
+
+    let div = document.createElement('div');
+    let childLen = document.body.children.length;
+    div.id = "score-" + (childLen-3);
+    div.innerHTML =
+        '<h1>SCORE: <span class="counter"></span></h1>'+
+        '<form onsubmit="return false;"> ' +
+        '<button  class="up">Up</button> ' +
+        '<button class="down">Down</button> ' +
+        '<button class="get">Get</button> ' +
+        '<input class="value" type="number" min="0"> ' +
+        '<button class="set">Set</button> ' +
+        '<button class="reset">Reset</button> ' +
+        '<button class="remove">Remove Counter</button>'+
+        '</form>';
+
+
+    document.body.appendChild(div);
+    return div;
 }
