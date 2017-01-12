@@ -13,7 +13,6 @@ function ScoreUI(el,range,start) {
     el.addEventListener("click", function(e){
         if(e.target.matches('button.up')){
             scoreCounter.Up();
-            trigger();
         }else if(e.target.matches('button.down')){
             scoreCounter.Down();
         }else if(e.target.matches('button.get')) {
